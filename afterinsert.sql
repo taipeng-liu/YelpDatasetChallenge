@@ -1,0 +1,33 @@
+ALTER TABLE Yelp_user ENABLE CONSTRAINT pk_user_id;
+ALTER TABLE Business ENABLE CONSTRAINT pk_business_id;
+ALTER TABLE Business ENABLE CONSTRAINT is_valid_boolean;
+ALTER TABLE Review ENABLE CONSTRAINT pk_review_id;
+ALTER TABLE Review ENABLE CONSTRAINT fk_review_uid;
+ALTER TABLE Review ENABLE CONSTRAINT fk_review_bid;
+ALTER TABLE CheckinInfo ENABLE CONSTRAINT fk_checkininfo_bid;
+ALTER TABLE Friend ENABLE CONSTRAINT pk_friend;
+ALTER TABLE Friend ENABLE CONSTRAINT fk_friend_uid1;
+ALTER TABLE Neighborhood ENABLE CONSTRAINT fk_neighborhood;
+ALTER TABLE VoteOn ENABLE CONSTRAINT fk_voteon;
+ALTER TABLE OperationTime ENABLE CONSTRAINT pk_operationtime;
+ALTER TABLE OperationTime ENABLE CONSTRAINT fk_operationtime;
+ALTER TABLE OperationTime ENABLE CONSTRAINT is_valid_operationDay;
+ALTER TABLE CategoryHasCategory ENABLE CONSTRAINT pk_chc;
+ALTER TABLE BusinessInCategory ENABLE CONSTRAINT pk_bic;
+ALTER TABLE BusinessInCategory ENABLE CONSTRAINT fk_bic;
+ALTER TABLE Attribute ENABLE CONSTRAINT pk_attribute;
+ALTER TABLE Attribute ENABLE CONSTRAINT fk_attribute;
+
+
+CREATE INDEX ind_busi_info ON Business(name, city, state);
+CREATE INDEX ind_review_bidstar ON Review(b_id, star);
+CREATE INDEX ind_rid_voteType ON VoteON(r_id, vote_type);
+CREATE INDEX ind_friend ON Friend(u_id2);
+create index ind_friend_uid1 on friend(u_id1);
+CREATE INDEX ind_bid_star ON Review(b_id);
+CREATE INDEX ind_ruid ON Review(u_id);
+create index ind_review_star on Review(star);
+CREATE INDEX ind_reviewUser ON Review(u_id, id, star);
+create index ind_vote_rid on voteon(r_id);
+create index ind_user on yelp_user(yelping_since);
+create index ind_attribute_fk on attribute(b_id);

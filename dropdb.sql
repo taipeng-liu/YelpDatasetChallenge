@@ -1,0 +1,27 @@
+DROP INDEX ind_busi_info;
+DROP INDEX ind_rid_voteType;
+DROP INDEX ind_friend;
+DROP index ind_friend_uid1;
+DROP INDEX ind_bid_star;
+DROP INDEX ind_ruid;
+DROP index ind_review_star;
+DROP INDEX ind_reviewUser;
+DROP index ind_vote_rid;
+DROP index ind_user;
+DROP index ind_review_bidstar;
+DROP index ind_attribute_fk;
+
+DROP TABLE MainCategory CASCADE CONSTRAINTS;
+DROP TABLE Attribute CASCADE CONSTRAINTS;
+DROP TABLE BusinessInCategory CASCADE CONSTRAINTS;
+DROP TABLE CategoryHasCategory CASCADE CONSTRAINTS;
+DROP TABLE OperationTime CASCADE CONSTRAINTS;
+DROP TABLE VoteOn CASCADE CONSTRAINTS;
+DROP TABLE Neighborhood CASCADE CONSTRAINTS;
+DROP TABLE Friend CASCADE CONSTRAINTS;
+
+DROP TABLE CheckinInfo CASCADE CONSTRAINTS;
+DROP TABLE Review CASCADE CONSTRAINTS;
+DROP TABLE Business CASCADE CONSTRAINTS;
+DROP TABLE Yelp_user CASCADE CONSTRAINTS;
+PURGE RECYCLEBIN;
